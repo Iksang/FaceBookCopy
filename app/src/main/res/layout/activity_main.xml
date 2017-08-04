@@ -37,6 +37,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:background="#F9F9F9"
         android:orientation="horizontal">
         <LinearLayout
             android:gravity="center"
@@ -60,7 +61,7 @@
             android:paddingBottom="2dp"
             android:layout_width="1dp"
             android:layout_height="match_parent"
-            android:background="#909090"/>
+            android:background="#DDDDDD"/>
         <LinearLayout
             android:gravity="center"
             android:layout_width="0dp"
@@ -83,7 +84,7 @@
             android:paddingBottom="2dp"
             android:layout_width="1dp"
             android:layout_height="match_parent"
-            android:background="#909090"/>
+            android:background="#DDDDDD"/>
         <LinearLayout
             android:gravity="center"
             android:layout_width="0dp"
@@ -106,16 +107,19 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="#909090"/>
+        android:background="#DDDDDD"/>
+
     <android.support.v4.view.ViewPager
         android:id="@+id/myViewPager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
     </android.support.v4.view.ViewPager>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#FFFFFF"
         android:orientation="horizontal">
         <LinearLayout
             android:layout_width="0dp"
@@ -125,7 +129,7 @@
             android:orientation="vertical">
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="35dp"
                 android:src="@mipmap/ic_launcher"/>
             <TextView
                 android:layout_width="wrap_content"
@@ -140,7 +144,7 @@
             android:orientation="vertical">
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="35dp"
                 android:src="@mipmap/ic_launcher"/>
             <TextView
                 android:layout_width="wrap_content"
@@ -155,7 +159,7 @@
             android:orientation="vertical">
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="35dp"
                 android:src="@mipmap/ic_launcher"/>
             <TextView
                 android:layout_width="wrap_content"
@@ -170,7 +174,7 @@
             android:orientation="vertical">
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="35dp"
                 android:src="@mipmap/ic_launcher"/>
             <TextView
                 android:layout_width="wrap_content"
@@ -185,7 +189,7 @@
             android:orientation="vertical">
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="35dp"
                 android:src="@mipmap/ic_launcher"/>
             <TextView
                 android:layout_width="wrap_content"
