@@ -3,6 +3,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gray_newspeed_post"
+    android:descendantFocusability="blocksDescendants"
     android:padding="10dp">
     <LinearLayout
         android:layout_width="match_parent"
@@ -26,14 +27,27 @@
                 android:textColor="#000000"
                 android:textSize="18sp"
                 android:text="Wikitree"/>
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="53분 전"/>
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/minuteAgoTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="53분 전"/>
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@mipmap/ic_launcher_round"/>
+
+            </LinearLayout>
+
         </LinearLayout>
     </LinearLayout>
 
     <TextView
+        android:id="@+id/contentTxt"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:layout_width="match_parent"
@@ -41,6 +55,7 @@
         android:textColor="#000000"
         android:text="&quot;ios7 업데이트 중 디테일&quot;\n\n 한 이용자가 &quot;디테일이 아주 차고 넘친다는. 이런 디테일에 사용자가 감동 받나봐요&quot;라는 멘트와 함께 올려준 이미지. #ios7"/>
     <LinearLayout
+        android:id="@+id/previewLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -75,9 +90,49 @@
         </LinearLayout>
     </LinearLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <LinearLayout
         android:layout_marginTop="10dp"
-        android:text="좋아요 4개"/>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="좋아요"/>
+        <TextView
+            android:id="@+id/likeCountTxt"
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4개"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:focusable="false"
+            android:id="@+id/likeBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="좋아요"/>
+        <Button
+            android:focusable="false"
+            android:id="@+id/replyBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="댓글 달기"/>
+        <Button
+            android:focusable="false"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="공유하기"/>
+    </LinearLayout>
+
+
 </LinearLayout>

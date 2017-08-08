@@ -17,6 +17,10 @@
         android:left="2dp">
         <shape
             android:shape="rectangle">
+            <gradient
+                android:angle="270"
+                android:startColor="#EFEFEF"
+                android:endColor="#EAEAEA"/>
             <corners
                 android:bottomLeftRadius="5dp"
                 android:bottomRightRadius="5dp"/>

@@ -19,6 +19,7 @@
             android:layout_width="30dp"
             android:layout_height="30dp"/>
         <TextView
+            android:id="@+id/titleTxt"
             android:gravity="center"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -33,6 +34,7 @@
             android:layout_height="30dp"/>
     </LinearLayout>
     <LinearLayout
+        android:id="@+id/newsFeedBtnsLayout"
         android:padding="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -122,6 +124,7 @@
         android:background="#FFFFFF"
         android:orientation="horizontal">
         <LinearLayout
+            android:id="@+id/newsFeedBtnLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -137,6 +140,7 @@
                 android:text="뉴스피드"/>
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/friendRequestBtnLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -152,6 +156,7 @@
                 android:text="요청"/>
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/messageBtnLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -167,6 +172,7 @@
                 android:text="메시지"/>
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/notificationBtnLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -182,6 +188,7 @@
                 android:text="알림"/>
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/seeMoreBtnLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
