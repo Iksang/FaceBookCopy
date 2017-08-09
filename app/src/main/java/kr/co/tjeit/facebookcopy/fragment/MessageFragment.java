@@ -12,6 +12,7 @@ import android.widget.ListView;
 
 import java.util.List;
 
+import kr.co.tjeit.facebookcopy.ChattingActivity;
 import kr.co.tjeit.facebookcopy.MessageActivity;
 import kr.co.tjeit.facebookcopy.R;
 import kr.co.tjeit.facebookcopy.adapter.MessageAdapter;
@@ -58,7 +59,7 @@ public class MessageFragment extends Fragment {
         messageListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(getActivity(), MessageActivity.class);
+                Intent intent = new Intent(getActivity(), ChattingActivity.class);
                 startActivity(intent);
             }
         });

@@ -24,7 +24,9 @@
         <activity android:name=".IntentPracticeActivity" />
         <activity android:name=".WebViewPracticeActivity" />
         <activity android:name=".ReplyListActivity" />
-        <activity android:name=".MessageActivity"></activity>
+        <activity android:name=".MessageActivity" />
+        <activity android:name=".EditStatusActivity" />
+        <activity android:name=".ChattingActivity"></activity>
     </application>
 
 </manifest>

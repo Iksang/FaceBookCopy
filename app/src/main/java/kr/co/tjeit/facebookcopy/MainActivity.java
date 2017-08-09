@@ -1,5 +1,6 @@
 package kr.co.tjeit.facebookcopy;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -27,12 +28,14 @@ public class MainActivity extends AppCompatActivity {
     private android.widget.LinearLayout seeMoreBtnLayout;
     private android.widget.TextView titleTxt;
     private LinearLayout newsFeedBtnsLayout;
+    private LinearLayout stateBtnsLayout;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         bindViews();
         setupEvents();
@@ -47,39 +50,38 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupEvents() {
-        newsFeedBtnLayout.setOnClickListener(new View.OnClickListener() {
+
+        stateBtnsLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                myViewPager.setCurrentItem(0);
+                Intent intent = new Intent(MainActivity.this, EditStatusActivity.class);
+                startActivity(intent);
             }
         });
-        friendRequestBtnLayout.setOnClickListener(new View.OnClickListener() {
+
+
+        // 1. 메모리 절약
+        // 2. 코드 가독성 향상
+
+        View.OnClickListener pageChangeListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                myViewPager.setCurrentItem(1);
+                int pageNum = Integer.parseInt(v.getTag().toString());
+                myViewPager.setCurrentItem(pageNum );
             }
-        });
-        messageBtnLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                myViewPager.setCurrentItem(2);
-            }
-        });
-        ;
-        notificationBtnLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                myViewPager.setCurrentItem(3);
-            }
-        });
-        ;
-        seeMoreBtnLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                myViewPager.setCurrentItem(4);
-            }
-        });
-        ;
+        };
+
+
+
+
+        newsFeedBtnLayout.setOnClickListener(pageChangeListener);
+        friendRequestBtnLayout.setOnClickListener(pageChangeListener);
+        messageBtnLayout.setOnClickListener(pageChangeListener);
+        notificationBtnLayout.setOnClickListener(pageChangeListener);
+        seeMoreBtnLayout.setOnClickListener(pageChangeListener);
+
+
+
 
         myViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -114,10 +116,10 @@ public class MainActivity extends AppCompatActivity {
 
                 // 뉴스피드 일때만 버튼들을 보여주고, 그외엔 숨김.
                 if(position == 0){
-                    newsFeedBtnsLayout.setVisibility(View.VISIBLE);
+                    stateBtnsLayout.setVisibility(View.VISIBLE);
                 }
                 else{
-                    newsFeedBtnsLayout.setVisibility(View.GONE);
+                    stateBtnsLayout.setVisibility(View.GONE);
                 }
 
             }
@@ -137,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
         this.friendRequestBtnLayout = (LinearLayout) findViewById(R.id.friendRequestBtnLayout);
         this.newsFeedBtnLayout = (LinearLayout) findViewById(R.id.newsFeedBtnLayout);
         this.myViewPager = (ViewPager) findViewById(R.id.myViewPager);
-        this.newsFeedBtnsLayout = (LinearLayout) findViewById(R.id.newsFeedBtnsLayout);
+        this.stateBtnsLayout = (LinearLayout) findViewById(R.id.stateBtnsLayout);
         this.titleTxt = (TextView) findViewById(R.id.titleTxt);
     }
 
